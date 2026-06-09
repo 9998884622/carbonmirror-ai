@@ -1,28 +1,36 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(
-  process.env.GEMINI_API_KEY as string
-);
+const genAI =
+  new GoogleGenerativeAI(
+    process.env.GEMINI_API_KEY as string
+  );
 
-export const generateEcoAdvice = async (
-  carbonScore: number,
-  emission: number,
-  recommendations: string[]
-) => {
-  const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash"
-  });
+export const generateEcoAdvice =
+  async (
+    carbonScore: number,
+    emission: number,
+    recommendations: string[]
+  ) => {
 
-  const prompt = `
+    const model =
+      genAI.getGenerativeModel({
+        model: "gemini-1.5-flash"
+      });
+
+    const prompt = `
 You are a sustainability expert.
 
-User Sustainability Score: ${carbonScore}
-User Carbon Emission: ${emission}
+Carbon Score:
+${carbonScore}
+
+Carbon Emission:
+${emission}
 
 Recommendations:
 ${recommendations.join("\n")}
 
 Provide:
+
 1. Carbon analysis
 2. Improvement suggestions
 3. Weekly eco challenge
@@ -31,9 +39,10 @@ Provide:
 Keep response under 200 words.
 `;
 
-  const result = await model.generateContent(
-    prompt
-  );
+    const result =
+      await model.generateContent(
+        prompt
+      );
 
-  return result.response.text();
+    return result.response.text();
 };

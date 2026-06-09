@@ -1,143 +1,81 @@
 # CarbonMirror AI
 
-## Predict. Reduce. Sustain.
-
-CarbonMirror AI is an AI-powered Carbon Footprint Awareness Platform that helps individuals understand, track, predict, and reduce their carbon emissions through personalized recommendations and sustainability insights.
-
 ## Problem Statement
 
-Most carbon footprint platforms only calculate emissions and provide generic suggestions. Users often struggle to understand how their daily habits impact the environment and what practical actions they can take to reduce their footprint.
+Carbon footprints are difficult for individuals to understand and reduce.
 
 ## Solution
 
-CarbonMirror AI creates a digital carbon profile for every user and provides:
+CarbonMirror AI provides:
 
-* Carbon Footprint Calculator
-* AI Sustainability Coach
-* Future Carbon Prediction Engine
-* Eco Decision Simulator
-* Accessibility Support
-* Sustainability Challenges
-* Carbon Reduction Recommendations
+- Carbon Footprint Calculator
+- Sustainability Score
+- AI Sustainability Coach
+- Future Emission Prediction
+- Eco Challenges
+- Accessibility Features
+
+---
+
+## Tech Stack
+
+Frontend:
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+
+Backend:
+- Node.js
+- Express
+- MongoDB
+
+AI:
+- Gemini API
+
+---
 
 ## Features
 
 ### Carbon Calculator
 
-Calculate emissions based on:
+Track daily emissions from:
 
-* Transportation
-* Electricity
-* Food Habits
-* Waste Generation
-* Water Consumption
+- Transport
+- Electricity
+- Water
+- Waste
+- Food
 
-### AI Sustainability Coach
+### AI Coach
 
-Provides personalized recommendations using AI.
+Personalized sustainability guidance.
 
-### Future Carbon Prediction
+### Future Prediction
 
-Predicts emissions for:
+Estimate future environmental impact.
 
-* 1 Month
-* 6 Months
-* 1 Year
-* 5 Years
+### Accessibility
 
-### Eco Decision Simulator
+Inclusive design for all users.
 
-Compare:
-
-* Petrol Bike vs EV
-* Public Transport vs Car
-* Vegetarian vs Non-Vegetarian Diet
-
-### Accessibility Features
-
-* Voice Assistance
-* Screen Reader Support
-* Keyboard Navigation
-* High Contrast Mode
-* Adjustable Font Size
-
-## Technology Stack
-
-Frontend:
-
-* React
-* TypeScript
-* Tailwind CSS
-
-Backend:
-
-* Node.js
-* Express.js
-* TypeScript
-
-Database:
-
-* MongoDB Atlas
-
-Authentication:
-
-* JWT
-* bcrypt
-
-AI:
-
-* Gemini API
-
-Testing:
-
-* Jest
-* Supertest
-
-Deployment:
-
-* Vercel
-* Render
-
-## Project Structure
-
-client/
-server/
-docs/
-tests/
-
-## Security Features
-
-* JWT Authentication
-* Password Hashing
-* Rate Limiting
-* Helmet Security
-* Input Validation
-* Environment Variables
+---
 
 ## Installation
 
-### Backend
+### Client
 
 npm install
-
 npm run dev
 
-### Frontend
+### Server
 
 npm install
-
 npm run dev
 
-## Future Scope
+---
 
-* Carbon Credit Marketplace
-* Smartwatch Integration
-* Smart Meter Integration
-* NGO Collaboration
-* Corporate Sustainability Dashboard
-
-## Author
+## Authors
 
 Priya Dolia
-Krishna Creative Hub
-
+Founder, Krishna Creative Hub

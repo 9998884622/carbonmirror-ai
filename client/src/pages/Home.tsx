@@ -16,11 +16,13 @@ function Home() {
           Your Carbon Footprint.
         </p>
 
-        <button
-          className="mt-8 bg-green-600 text-white px-8 py-3 rounded-lg"
-        >
-          Get Started
-        </button>
+       <a
+  href="/calculator"
+  className="inline-block mt-8 bg-green-600 text-white px-8 py-3 rounded-lg"
+>
+  Calculate My Footprint
+</a>
+      
       </section>
 
       <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-6">

@@ -18,67 +18,86 @@ import {
   predictFutureEmission
 } from "../services/predictionService";
 
-import { AuthRequest }
-from "../middleware/authMiddleware";
+import {
+  generateEcoAdvice
+} from "../services/aiService";
 
-export const calculateCarbon =
-async (
+import {
+  AuthRequest
+} from "../middleware/authMiddleware";
+
+export const calculateCarbon = async (
   req: AuthRequest,
   res: Response
 ) => {
-
-  const {
-    transportKm,
-    electricityUnits,
-    waterUsage,
-    wasteKg,
-    foodType
-  } = req.body;
-
-  const totalEmission =
-    calculateCarbonFootprint(
+  try {
+    const {
       transportKm,
       electricityUnits,
       waterUsage,
       wasteKg,
       foodType
-    );
+    } = req.body;
 
-  const score =
-    calculateScore(
-      totalEmission
-    );
+    const totalEmission =
+      calculateCarbonFootprint(
+        transportKm,
+        electricityUnits,
+        waterUsage,
+        wasteKg,
+        foodType
+      );
 
-  const recommendations =
-    getRecommendations(
-      transportKm,
-      electricityUnits,
-      foodType
-    );
+    const score =
+      calculateScore(
+        totalEmission
+      );
 
-  const prediction =
-    predictFutureEmission(
-      totalEmission
-    );
+    const recommendations =
+      getRecommendations(
+        transportKm,
+        electricityUnits,
+        foodType
+      );
 
-  const record =
-    await CarbonRecord.create({
-      userId:
-        req.user.id,
-      transportKm,
-      electricityUnits,
-      waterUsage,
-      wasteKg,
-      foodType,
-      totalEmission,
-      sustainabilityScore:
-        score
+    const prediction =
+      predictFutureEmission(
+        totalEmission
+      );
+
+    const aiAdvice =
+      await generateEcoAdvice(
+        score,
+        totalEmission,
+        recommendations
+      );
+
+    const record =
+      await CarbonRecord.create({
+        userId: req.user.id,
+        transportKm,
+        electricityUnits,
+        waterUsage,
+        wasteKg,
+        foodType,
+        totalEmission,
+        sustainabilityScore: score
+      });
+
+    res.json({
+      success: true,
+      carbonData: record,
+      recommendations,
+      prediction,
+      aiAdvice
     });
 
-  res.json({
-    success: true,
-    carbonData: record,
-    recommendations,
-    prediction
-  });
+  } catch (error: any) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+
+  }
 };

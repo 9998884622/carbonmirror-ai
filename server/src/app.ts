@@ -6,6 +6,7 @@ import rateLimit from "express-rate-limit";
 
 import authRoutes from "./routes/authRoutes";
 import userRoutes from "./routes/userRoutes";
+import carbonRoutes from "./routes/carbonRoutes";
 
 const app = express();
 
@@ -34,5 +35,7 @@ app.get("/", (_, res) => {
 app.use("/api/auth", authRoutes);
 
 app.use("/api/users", userRoutes);
+
+app.use("/api/carbon", carbonRoutes);
 
 export default app;

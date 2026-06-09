@@ -10,28 +10,22 @@ import carbonRoutes from "./routes/carbonRoutes";
 
 const app = express();
 
-// JSON parser
 app.use(express.json());
 
-// CORS (deployment safe)
 app.use(
   cors({
-    origin: "*",
-    credentials: true
+    origin: "*"
   })
 );
 
-// Security headers
 app.use(
   helmet({
     crossOriginResourcePolicy: false
   })
 );
 
-// Logger
 app.use(morgan("dev"));
 
-// Rate limiting (prevents abuse)
 app.use(
   rateLimit({
     windowMs: 15 * 60 * 1000,
@@ -39,15 +33,13 @@ app.use(
   })
 );
 
-// Health check route
-app.get("/", (_, res) => {
+app.get("/", (req, res) => {
   res.json({
     success: true,
     message: "CarbonMirror AI API Running"
   });
 });
 
-// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/carbon", carbonRoutes);

@@ -3,7 +3,7 @@ import { Router } from "express";
 import {
   protect,
   AuthRequest
-} from "../middleware/authMiddleware";
+} from "../middleware/authMiddleware.js";
 
 const router = Router();
 

@@ -2,11 +2,11 @@ import { Router } from "express";
 
 import {
   calculateCarbon
-} from "../controllers/carbonController";
+} from "../controllers/carbonController.js";
 
 import {
   protect
-} from "../middleware/authMiddleware";
+} from "../middleware/authMiddleware.js";
 
 const router = Router();
 

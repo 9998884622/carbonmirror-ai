@@ -9,7 +9,7 @@ function Login() {
     useState("");
 
   return (
-    <div className="max-w-md mx-auto mt-20 bg-white p-8 rounded shadow">
+    <div className="max-w-md mx-auto mt-12 bg-white p-8 rounded shadow">
 
       <h1 className="text-3xl font-bold">
         Login
@@ -18,7 +18,7 @@ function Login() {
       <input
         type="email"
         placeholder="Email"
-        className="border p-3 w-full mt-4"
+        className="border p-3 w-full mt-4 rounded"
         value={email}
         onChange={(e) =>
           setEmail(
@@ -30,7 +30,7 @@ function Login() {
       <input
         type="password"
         placeholder="Password"
-        className="border p-3 w-full mt-4"
+        className="border p-3 w-full mt-4 rounded"
         value={password}
         onChange={(e) =>
           setPassword(

@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 
-import User from "../models/User";
-import { generateToken } from "../utils/generateToken";
+import User from "../models/User.js";
+import { generateToken } from "../utils/generateToken.js";
 
 import {
   registerSchema,
   loginSchema
-} from "../validators/authValidator";
+} from "../validators/authValidator.js";
 
 export const registerUser = async (
   req: Request,

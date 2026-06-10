@@ -63,15 +63,22 @@ Inclusive design for all users.
 
 ## Installation
 
-### Client
+Install everything from the repository root:
 
 npm install
+
+Build both projects:
+
+npm run build
+
+Run the frontend and backend together:
+
 npm run dev
 
-### Server
+Run only one project:
 
-npm install
-npm run dev
+npm run dev:client
+npm run dev:server
 
 ---
 

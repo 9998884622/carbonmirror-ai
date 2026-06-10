@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
 function Calculator() {
   const [result, setResult] =
     useState<number | null>(null);
@@ -12,9 +9,7 @@ function Calculator() {
   };
 
   return (
-    <>
-      <Navbar />
-
+    <div className="py-6">
       <div className="max-w-4xl mx-auto py-10 px-6">
         <h1 className="text-4xl font-bold">
           Carbon Calculator
@@ -80,9 +75,7 @@ function Calculator() {
           )}
         </div>
       </div>
-
-      <Footer />
-    </>
+    </div>
   );
 }
 

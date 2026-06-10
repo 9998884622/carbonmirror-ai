@@ -12,7 +12,7 @@ function Register() {
     useState("");
 
   return (
-    <div className="max-w-md mx-auto mt-20 bg-white p-8 rounded shadow">
+    <div className="max-w-md mx-auto mt-12 bg-white p-8 rounded shadow">
 
       <h1 className="text-3xl font-bold">
         Register
@@ -21,7 +21,7 @@ function Register() {
       <input
         type="text"
         placeholder="Name"
-        className="border p-3 w-full mt-4"
+        className="border p-3 w-full mt-4 rounded"
         value={name}
         onChange={(e) =>
           setName(
@@ -33,7 +33,7 @@ function Register() {
       <input
         type="email"
         placeholder="Email"
-        className="border p-3 w-full mt-4"
+        className="border p-3 w-full mt-4 rounded"
         value={email}
         onChange={(e) =>
           setEmail(
@@ -45,7 +45,7 @@ function Register() {
       <input
         type="password"
         placeholder="Password"
-        className="border p-3 w-full mt-4"
+        className="border p-3 w-full mt-4 rounded"
         value={password}
         onChange={(e) =>
           setPassword(

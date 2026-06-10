@@ -11,3 +11,41 @@ body {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --brand: #16a34a;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* App background texture */
+body {
+  background-image: radial-gradient(rgba(22,163,74,0.03) 1px, transparent 1px), linear-gradient(180deg, #f7fbf9, #ffffff);
+  background-size: 24px 24px, 100% 100%;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px rgba(16,24,40,0.06);
+}
+
+.muted {
+  color: var(--muted);
+}

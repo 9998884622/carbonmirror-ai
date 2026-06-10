@@ -1,30 +1,30 @@
 import { Response } from "express";
 
-import CarbonRecord from "../models/CarbonRecord";
+import CarbonRecord from "../models/CarbonRecord.js";
 
 import {
   calculateCarbonFootprint
-} from "../services/carbonCalculator";
+} from "../services/carbonCalculator.js";
 
 import {
   calculateScore
-} from "../services/scoreService";
+} from "../services/scoreService.js";
 
 import {
   getRecommendations
-} from "../services/recommendationService";
+} from "../services/recommendationService.js";
 
 import {
   predictFutureEmission
-} from "../services/predictionService";
+} from "../services/predictionService.js";
 
 import {
   generateEcoAdvice
-} from "../services/aiService";
+} from "../services/aiService.js";
 
 import {
   AuthRequest
-} from "../middleware/authMiddleware";
+} from "../middleware/authMiddleware.js";
 
 export const calculateCarbon = async (
   req: AuthRequest,

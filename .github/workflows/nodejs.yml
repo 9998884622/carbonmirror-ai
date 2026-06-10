@@ -14,7 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # BACKEND
       - name: Install server dependencies
         working-directory: server
         run: npm install
@@ -23,11 +22,4 @@ jobs:
         working-directory: server
         run: npm run build
 
-      # FRONTEND
-      - name: Install client dependencies
-        working-directory: client
-        run: npm install
-
-      - name: Build client
-        working-directory: client
-        run: npm run build
+      - name:
